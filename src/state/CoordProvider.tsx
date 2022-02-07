@@ -30,7 +30,5 @@ export const CoordProvider = ({ children }: Props) => {
 }
 
 export const useCoord = () => {
-  const state = useContext(CoordContext);
-
-  return state
+  return useContext(CoordContext);
 }

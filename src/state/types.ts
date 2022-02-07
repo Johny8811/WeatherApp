@@ -3,11 +3,13 @@ export interface Coord {
   lat: number;
 }
 
+export type IconType = '01d' | '02d' | '03d' | '04d' | '09d' | '10d' | '11d' | '13d' | '50d'
+
 export interface Weather {
   id: number;
   main: string;
   description: string;
-  icon: string;
+  icon: IconType;
 }
 
 export interface Main {
@@ -37,7 +39,7 @@ export interface Sys {
   sunset: number;
 }
 
-export interface WeatherObject {
+export interface WeatherData {
   coord: Coord;
   weather: Weather[];
   base: string;

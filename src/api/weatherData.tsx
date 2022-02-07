@@ -5,7 +5,7 @@ import {
   BASE_URL
 } from './constants'
 
-export const weatherData = ({ lat, lon }: { lat: number, lon: number }) => {
+export const weatherDataFetch = ({ lat, lon }: { lat: number, lon: number }) => {
   const urlToCall = `${BASE_URL}?lat=${lat}&lon=${lon}&units=${UNITS}&appid=${WEATHER_API_KEY}&lang=${LANG}`;
 
   return fetch(urlToCall)

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useCoord } from '../state/CoordProvider'
+import { useWeatherData } from '../state/WeatherDataProvider'
 
 import './WeatherApp.css';
 import { Map } from './components/Map'
@@ -7,6 +10,13 @@ import { BasicInfo } from './components/BasicInfo'
 const mapElement = <div style={{ height: `100%` }} />
 
 export const WeatherApp = () => {
+  const { coord } = useCoord();
+  const { getWeatherData } = useWeatherData();
+
+  useEffect(() => {
+    getWeatherData(coord);
+  }, [coord])
+
   return (
     <div>
       <Map
