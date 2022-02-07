@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Map } from './components/Map'
+
 import './WeatherApp.css';
-import { Map } from '../../components/Map'
 
 const mapElement = <div style={{ height: `100%` }} />
 

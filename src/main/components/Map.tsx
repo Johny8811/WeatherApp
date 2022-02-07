@@ -1,7 +1,7 @@
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps";
 import React from "react";
 
-import { useCoord, DEFAULT_COORDINATES } from '../state/CoordProvider'
+import { useCoord, DEFAULT_COORDINATES } from '../../state/CoordProvider'
 
 const MapComponent = () => {
   const { coord, setCoord } = useCoord();
