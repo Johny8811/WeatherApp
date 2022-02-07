@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Map } from './components/Map'
-
 import './WeatherApp.css';
+import { Map } from './components/Map'
+import { BasicInfo } from './components/BasicInfo'
 
 const mapElement = <div style={{ height: `100%` }} />
 
@@ -15,6 +15,10 @@ export const WeatherApp = () => {
         containerElement={<div style={{ height: `50vh` }} />}
         mapElement={mapElement}
       />
+      <div className="infoContainer">
+        <BasicInfo />
+        <div className="infoContainer_chart">hello</div>
+      </div>
     </div>
   );
 }

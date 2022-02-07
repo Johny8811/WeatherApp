@@ -1,0 +1,51 @@
+.infoContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.infoContainer > div {
+    flex-grow: 1;
+    padding: 20px;
+    /* TODO: check this */
+    /*width: 50%*/
+}
+
+.basicInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.basicInfo_icon {
+    align-self: center;
+}
+
+.basicInfo_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.basicInfo_dataExt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ---- */
+.divider {
+    background-color: #ddd;
+    width: 100%;
+    height: 1px;
+}
+/* ---- */
+
+.infoContainer_chart {
+    background-color: red;
+}
+
+@media (max-width: 800px) {
+    .infoContainer {
+        flex-direction: column;
+    }
+}
