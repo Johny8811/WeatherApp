@@ -5,11 +5,12 @@ import { useWeatherData } from '../state/weather/WeatherDataProvider';
 import { useForecastData } from '../state/forecast/ForecastDataProvider';
 
 import './WeatherApp.css';
-import { Map } from './components/Map'
-import { BasicInfo } from './components/BasicInfo'
-import { ForecastChart } from './components/ForecastChart'
+import { Map } from '../components/Map'
+import { BasicInfo } from '../components/BasicInfo'
+import { ForecastChart } from '../components/ForecastChart'
 
-const mapElement = <div style={{ height: `100%` }} />
+const mapElement = <div style={{ height: `100%` }} />;
+const containerElement = <div style={{ height: `50vh` }} />;
 
 export const WeatherApp = () => {
   const { coord } = useCoord();
@@ -26,7 +27,7 @@ export const WeatherApp = () => {
       <Map
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
         loadingElement={mapElement}
-        containerElement={<div style={{ height: `50vh` }} />}
+        containerElement={containerElement}
         mapElement={mapElement}
       />
       <div className="infoContainer">

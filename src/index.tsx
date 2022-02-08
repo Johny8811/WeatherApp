@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { WeatherApp } from './main/WeatherApp';
+import { WeatherApp } from './screens/WeatherApp';
 import reportWebVitals from './reportWebVitals';
 
 import { CoordProvider } from './state/CoordProvider';

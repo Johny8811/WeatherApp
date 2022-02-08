@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { WeatherApp } from './WeatherApp';
 
-// TODO: adjust
+// TODO: test something
 test('renders learn react link', () => {
   render(<WeatherApp />);
   const linkElement = screen.getByText(/learn react/i);
