@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { WeatherApp } from './main/WeatherApp';
 import reportWebVitals from './reportWebVitals';
+
+import { CoordProvider } from './state/CoordProvider';
+import { WeatherDataProvider } from './state/weather/WeatherDataProvider';
+import { ForecastDataProvider } from './state/forecast/ForecastDataProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CoordProvider>
+      <WeatherDataProvider>
+        <ForecastDataProvider>
+          <WeatherApp />
+        </ForecastDataProvider>
+      </WeatherDataProvider>
+    </CoordProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
