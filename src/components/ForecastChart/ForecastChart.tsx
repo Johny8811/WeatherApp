@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis, Legend } from "recharts";
 
-import { useForecastData } from '../state/forecast/ForecastDataProvider';
+import { useForecastData } from '../../state/forecast/ForecastDataProvider';
+
+import './ForecastChart.css';
 
 export const ForecastChart = () => {
   const { forecastData } = useForecastData();

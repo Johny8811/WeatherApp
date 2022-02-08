@@ -1,7 +1,9 @@
 import React  from "react";
 
-import { useWeatherData } from '../state/weather/WeatherDataProvider'
-import { WeatherIcon } from './WeatherIcon'
+import { useWeatherData } from '../../state/weather/WeatherDataProvider';
+import { WeatherIcon } from '../WeatherIcon';
+
+import './BasicInfo.css';
 
 export const BasicInfo = () => {
   const { weatherData } = useWeatherData();

@@ -9,42 +9,6 @@
     padding: 20px;
 }
 
-.basicInfo {
-    display: flex;
-    flex-direction: column;
-}
-
-.basicInfo_icon {
-    align-self: center;
-}
-
-.basicInfo_data {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.basicInfo_dataExt {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.divider {
-    background-color: #ddd;
-    width: 100%;
-    height: 1px;
-}
-
-.infoContainer_chart {
-    align-items: center;
-}
-
-.forecastChart {
-    display: flex;
-    justify-content: center;
-}
-
 @media (max-width: 1000px) {
     .infoContainer {
         flex-direction: column;

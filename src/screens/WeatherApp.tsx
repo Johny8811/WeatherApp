@@ -6,8 +6,8 @@ import { useForecastData } from '../state/forecast/ForecastDataProvider';
 
 import './WeatherApp.css';
 import { Map } from '../components/Map'
-import { BasicInfo } from '../components/BasicInfo'
-import { ForecastChart } from '../components/ForecastChart'
+import { BasicInfo } from '../components/BasicInfo/BasicInfo'
+import { ForecastChart } from '../components/ForecastChart/ForecastChart'
 
 const mapElement = <div style={{ height: `100%` }} />;
 const containerElement = <div style={{ height: `50vh` }} />;

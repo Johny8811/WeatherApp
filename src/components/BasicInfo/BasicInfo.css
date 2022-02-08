@@ -1,0 +1,20 @@
+.basicInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.basicInfo_icon {
+    align-self: center;
+}
+
+.basicInfo_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.basicInfo_dataExt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
