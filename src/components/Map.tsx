@@ -13,6 +13,8 @@ const MapComponent = () => {
     })
   }
 
+  // fixme: original marker is still on map after position is changed
+  //  https://stackoverflow.com/questions/66371416/why-is-my-old-marker-still-visible-even-after-the-props-change-in-react-google-m
   return (
     <GoogleMap
       defaultZoom={8}
