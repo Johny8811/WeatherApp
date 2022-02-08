@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconType } from '../../state/types'
+import { IconType } from '../../state/weather/types'
 
 type Props = {
   iconType: IconType;

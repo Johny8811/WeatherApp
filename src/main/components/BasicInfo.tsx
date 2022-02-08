@@ -1,6 +1,6 @@
 import React  from "react";
 
-import { useWeatherData } from '../../state/WeatherDataProvider'
+import { useWeatherData } from '../../state/weather/WeatherDataProvider'
 import { WeatherIcon } from './WeatherIcon'
 
 export const BasicInfo = () => {

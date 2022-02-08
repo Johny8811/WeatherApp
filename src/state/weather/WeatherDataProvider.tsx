@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, useState } from 'react';
 
-import { weatherDataFetch } from '../api/weatherData';
+import { weatherDataFetch } from '../../api/weatherDataFetch';
 import { WeatherData, Coord } from './types';
 
 type Props = {

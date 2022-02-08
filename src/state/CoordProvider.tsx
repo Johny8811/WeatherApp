@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, useState } from 'react';
 
-import { Coord } from './types'
+import { Coord } from './weather/types'
 
 export const DEFAULT_COORDINATES = { lat: 50.068, lon: 14.434 }
 
