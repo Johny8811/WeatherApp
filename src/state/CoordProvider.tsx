@@ -13,7 +13,6 @@ type CoordProvider = {
   setCoord: (data: Coord) => void
 }
 
-// TODO: improve this ugly stuff
 const CoordContext = createContext<CoordProvider>({
   coord: DEFAULT_COORDINATES,
   setCoord: () => {}

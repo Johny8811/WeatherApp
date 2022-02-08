@@ -1,21 +1,25 @@
 import React, { useEffect } from 'react';
 
-import { useCoord } from '../state/CoordProvider'
-import { useWeatherData } from '../state/WeatherDataProvider'
+import { useCoord } from '../state/CoordProvider';
+import { useWeatherData } from '../state/weather/WeatherDataProvider';
+import { useForecastData } from '../state/forecast/ForecastDataProvider';
 
 import './WeatherApp.css';
 import { Map } from './components/Map'
 import { BasicInfo } from './components/BasicInfo'
+import { ForecastChart } from './components/ForecastChart'
 
 const mapElement = <div style={{ height: `100%` }} />
 
 export const WeatherApp = () => {
   const { coord } = useCoord();
   const { getWeatherData } = useWeatherData();
+  const { getForecastData } = useForecastData();
 
   useEffect(() => {
     getWeatherData(coord);
-  }, [coord])
+    getForecastData(coord);
+  }, [coord]);
 
   return (
     <div>
@@ -27,7 +31,7 @@ export const WeatherApp = () => {
       />
       <div className="infoContainer">
         <BasicInfo />
-        <div className="infoContainer_chart">hello</div>
+        <ForecastChart />
       </div>
     </div>
   );
