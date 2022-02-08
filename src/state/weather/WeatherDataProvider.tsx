@@ -9,24 +9,24 @@ type Props = {
 
 type WeatherDataProvider = {
   weatherData: WeatherData | undefined,
-  getWeatherData: (data: Coord) => void
+  fetchWeatherData: (data: Coord) => void
 }
 
 const WeatherDataContext = createContext<WeatherDataProvider>({
   weatherData: undefined,
-  getWeatherData: () => {},
+  fetchWeatherData: () => {},
 });
 
 export const WeatherDataProvider = ({ children }: Props) => {
   const [weatherData, setWeatherData] = useState<WeatherData | undefined>()
 
-  const getWeatherData = async (coord: Coord) => {
+  const fetchWeatherData = async (coord: Coord) => {
     const data = await weatherDataFetch(coord);
     setWeatherData(data);
   }
 
   return (
-    <WeatherDataContext.Provider value={{ weatherData, getWeatherData }}>
+    <WeatherDataContext.Provider value={{ weatherData, fetchWeatherData }}>
       {children}
     </WeatherDataContext.Provider>
   )

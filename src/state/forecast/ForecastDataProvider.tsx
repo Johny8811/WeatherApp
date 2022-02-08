@@ -10,24 +10,24 @@ type Props = {
 
 type ForecastDataProvider = {
   forecastData: ForecastData | undefined,
-  getForecastData: (data: Coord) => void
+  fetchForecastData: (data: Coord) => void
 }
 
 const ForecastDataContext = createContext<ForecastDataProvider>({
   forecastData: undefined,
-  getForecastData: () => {},
+  fetchForecastData: () => {},
 });
 
 export const ForecastDataProvider = ({ children }: Props) => {
   const [forecastData, setForecastData] = useState<ForecastData | undefined>()
 
-  const getForecastData = async (coord: Coord) => {
+  const fetchForecastData = async (coord: Coord) => {
     const data = await forecastDataFetch(coord);
     setForecastData(data);
   }
 
   return (
-    <ForecastDataContext.Provider value={{ forecastData, getForecastData }}>
+    <ForecastDataContext.Provider value={{ forecastData, fetchForecastData }}>
       {children}
     </ForecastDataContext.Provider>
   )

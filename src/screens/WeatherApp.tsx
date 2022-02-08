@@ -14,12 +14,12 @@ const containerElement = <div style={{ height: `50vh` }} />;
 
 export const WeatherApp = () => {
   const { coord } = useCoord();
-  const { getWeatherData } = useWeatherData();
-  const { getForecastData } = useForecastData();
+  const { fetchWeatherData } = useWeatherData();
+  const { fetchForecastData } = useForecastData();
 
   useEffect(() => {
-    getWeatherData(coord);
-    getForecastData(coord);
+    fetchWeatherData(coord);
+    fetchForecastData(coord);
   }, [coord]);
 
   return (
