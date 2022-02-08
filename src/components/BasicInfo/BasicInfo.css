@@ -7,6 +7,22 @@
     align-self: center;
 }
 
+.basicInfo_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basicInfo_headerButton {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
 .basicInfo_data {
     display: flex;
     flex-direction: row;

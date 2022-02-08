@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState } from "react";
 
 import { useWeatherData } from '../../state/weather/WeatherDataProvider';
 import { WeatherIcon } from '../WeatherIcon';
@@ -6,6 +6,7 @@ import { WeatherIcon } from '../WeatherIcon';
 import './BasicInfo.css';
 
 export const BasicInfo = () => {
+  const [windDataActive, setWindDataActive] = useState(false);
   const { weatherData } = useWeatherData();
 
   return (
@@ -17,7 +18,15 @@ export const BasicInfo = () => {
             description={weatherData?.weather[0].description}/>
         )}
       </div>
-      <h2>Weather info</h2>
+      <div className="basicInfo_header">
+        <h2>Weather info</h2>
+        <button
+          className="basicInfo_headerButton"
+          onClick={() => setWindDataActive(!windDataActive)}
+        >
+          {windDataActive ? 'Hide wind data' : 'Show wind data'}
+        </button>
+      </div>
       <div className="basicInfo_data">
         <span>
           <h4>{weatherData?.name}</h4>
@@ -29,18 +38,37 @@ export const BasicInfo = () => {
         </span>
       </div>
       <div className="divider"/>
-      <div className="basicInfo_dataExt">
-          <p>Feels like</p>
-          <p>{weatherData?.main.feels_like}</p>
-      </div>
-      <div className="basicInfo_dataExt">
-        <p>Pressure</p>
-        <p>{weatherData?.main.pressure}</p>
-      </div>
-      <div className="basicInfo_dataExt">
-        <p>Humidity</p>
-        <p>{weatherData?.main.humidity}</p>
-      </div>
+      {windDataActive ? (
+        <>
+          <div className="basicInfo_dataExt">
+            <p>Wind direction</p>
+            <p>{weatherData?.wind.deg}</p>
+          </div>
+          <div className="basicInfo_dataExt">
+            <p>Wind speed</p>
+            <p>{weatherData?.wind.speed}</p>
+          </div>
+          <div className="basicInfo_dataExt">
+            <p>Clouds</p>
+            <p>{weatherData?.clouds.all}</p>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="basicInfo_dataExt">
+            <p>Feels like</p>
+            <p>{weatherData?.main.feels_like}</p>
+          </div>
+          <div className="basicInfo_dataExt">
+            <p>Pressure</p>
+            <p>{weatherData?.main.pressure}</p>
+          </div>
+          <div className="basicInfo_dataExt">
+            <p>Humidity</p>
+            <p>{weatherData?.main.humidity}</p>
+          </div>
+        </>
+      )}
     </div>
   )
 }
